@@ -1,0 +1,20 @@
+@media (min-width: 992px) {
+  .rounded-lg-3 {
+    border-radius: 0.3rem;
+  }
+}
+/* body {
+    background-image: url('assets/img/img11/cover2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* Opsional: menetapkan warna latar belakang jika gambar tidak dimuat */
+    /* background-color: #f8f9fa;
+} */
+
+.container {
+    /* Jika ingin memberikan latar belakang pada container */
+    background-color: rgba(255, 255, 255, 0.8); /* Ubah nilai alpha sesuai kebutuhan transparansi */
+    /* atau background-image: url('url_gambar_anda_di_sini'); */
+    /* Sesuaikan properti lain jika diperlukan */
+    border-radius: 15px;
+}

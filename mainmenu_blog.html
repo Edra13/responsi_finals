@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Style Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Search CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css" />
+
+    <!-- Geolocation CSS Library for Plugin -->
+    <link rel="stylesheet"
+        href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css" />
+
+    <!-- Leaflet Mouse Position CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="blog.css" rel="stylesheet"> -->
+
+    <!-- ICON FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <!-- Template Main CSS File -->
+    <link href="mainmenu_blog.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.css" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i">
+
+    <!--Routing-->
+    <link rel="stylesheet" href="assets/plugins/leaflet-routing/leaflet-routing-machine.css" />
+
+    </script>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+
+        .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #1D3782 0%,
+                    #3A749C 29%,
+                    #3A9C86 67%,
+                    #8CD6C6 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 50px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .welcome-container {
+            background: linear-gradient(to top, #3A749C, #C1EEE4);
+        }
+
+        .welcome-container h1.display-4 {
+            color: white;
+            /* atau #ffffff */
+        }
+
+        .welcome-container p.lead {
+            color: white;
+            /* atau #ffffff */
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Search JavaScript Library -->
+    <script src="assets/plugins/leaflet-search/leaflet-search.js"></script>
+
+    <!-- Geolocation Javascript Library -->
+    <script
+        src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+
+    <!-- Leaflet Mouse Position JavaScript Library -->
+    <script src="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.js"></script>
+
+    <!-- Leaflet Measure JavaScript Library -->
+    <script src="assets/plugins/leaflet-measure/leaflet-measure.js"></script>
+
+    <!-- EasyPrint JavaScript Library -->
+    <script src="assets/plugins/leaflet-easyprint/leaflet.easyPrint.js"></script>
+
+    <!-- Marker Cluster -->
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster.js"></script>
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
+
+    <!--Routing-->
+    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.js"></script>
+    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.js" crossorigin=""></script>
+
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <!-- <div class="col-4 pt-1">
+          <a class="link-secondary" href="#">Subscribe</a>
+        </div> -->
+                <div class="col-6">
+                    <a class="animate-charcter" class="display-4 fw-bold lh-1 text-body-emphasis">OTW-GILI</a>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline">
+                <a class="nav-item nav-link link-body-emphasis" href="#map">MAP</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#WAY">WAY</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#attraction">ATTRACTION</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#visit">VISIT</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="header">
+        <!-- <div class="sides">
+                <a href="#" class="logo">BLOG</a>
+            </div>
+            <div class="sides"> <a href="#" class="menu"> </a></div> -->
+        <div class="info-2">
+            <h3>Welcome to</h3>
+            <h1>OTW-GILI</h1>
+            <div class="meta">
+                <a href="https://github.com/Edra13" target="_b" class="author"></a><br>
+                By <a href="https://github.com/Edra13" target="_b">Edra Elricadewi</a>
+                <br> 22/497226/SV/21107
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <main class="container">
+
+        <!-- <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary welcome-container">
+            <div class="col-lg-6 px-0">
+                <h1 class="display-4 fst-italic">Welcome to OTW-GILI</h1>
+                <p class="lead my-3">A guide for you who want to explore Gili's Island</p>
+            </div>
+        </div> -->
+
+        <div class="container custom-container">
+            <div class="container">
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var map = L.map("map").setView([-8.350060, 116.056335], 13);
+
+            /* Image Watermark 2 */
+            L.Control.Watermark = L.Control.extend({
+                onAdd: function (map) {
+                    var img = L.DomUtil.create('img');
+                    img.src = 'assets/img/logo/elm2.png';
+                    img.style.width = '50px';
+                    return img;
+                }
+            });
+            L.control.watermark = function (opts) {
+                return new L.Control.Watermark(opts);
+            }
+
+            L.control.watermark({ position: 'bottomright' }).addTo(map);
+
+            /* Judul dan Subjudul */
+            var title = new L.Control();
+            title.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+            title.update = function () {
+                this._div.innerHTML = '<h2>Where is Gili Island located?</h2>'
+            };
+            title.addTo(map);
+
+
+            //  /* Tile Basemap */ (note: pilihan basemap diakses pada https://leaflet-extras.github.io/leaflet-providers/preview/)
+            var basemap1 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="DIVSIG UGM" target="_blank">DIVSIG UGM</a>' //menambahkan nama//
+            });
+
+            var basemap2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z} / {y}/{x}', {
+                attribution: 'Tiles & copy; Esri | <a href="Latihan WebGIS" target="_blank">DIVSIG UGM</a>'
+            });
+
+            var basemap3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{ x } ', {
+                attribution: 'Tiles &copy; Esri | <a href="Lathan WebGIS" target="_blank">DIVSIG UGM</a>'
+
+            });
+
+            var basemap4 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org / ">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+
+            });
+
+            var basemap5 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+                attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                ext: 'png'
+            });
+
+            var basemap6 = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain_background/{z}/{x}/{y}{r}.{ext}', {
+                attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                ext: 'png'
+            });
+
+            var basemap7 = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+            });
+
+            basemap1.addTo(map);
+
+            /* Control Layer */
+            var baseMaps = {
+                "OpenStreetMap": basemap1,
+                "Esri World Street": basemap2,
+                "Esri Imagery": basemap3,
+                "Stadia Dark Mode": basemap4,
+                "Stadia Smooth": basemap5,
+                "Stamen Terrain": basemap6,
+                "CartoDB Voyager": basemap7
+            };
+
+            L.control.layers(baseMaps).setPosition('bottomright').addTo(map);
+
+            /* Memanggil File GeoJSON Point 01*/
+            var wfsgeoserver1 = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+
+                        })
+                    });
+                },
+
+                onEachFeature: function (feature, layer) {
+                    /* Variabel content untuk memanggil atribut dari data file geojson */
+                    var content = "Desa : " + feature.properties.namobj + "<br>" +
+                        "Kecamatan : " + feature.properties.wadmkc + "<br>" +
+                        "Kabupaten : " + feature.properties.wadmkk;
+
+                    layer.on({
+                        click: function (e) { //Fungsi ketika icon simbol di-klik
+                            wfsgeoserver1.bindPopup(content);
+                        },
+
+                        // mouseover: function (e) {
+
+                        //     wfsgeoserver1.bindTooltip(feature.properties.namobj);
+                        // },
+
+                        mouseout: function (e) {
+                            wfsgeoserver1.closePopup();
+                        }
+                    });
+                }
+            });
+
+            $.getJSON("gili_geoserver2.php", function (data) {
+                wfsgeoserver1.addData(data);
+                map.addLayer(wfsgeoserver1);
+                map.fitBounds(wfsgeoserver1.getBounds());
+            });
+
+
+
+            // Menambahkan marker dengan pop up
+
+            var customIcon = L.icon({
+                iconUrl: 'assets/img/logo/marker3.png',
+                iconSize: [32, 32], // Sesuaikan ukuran ikon Anda
+                iconAnchor: [16, 32], // Sesuaikan titik ancor ikon jika diperlukan
+                popupAnchor: [0, -30] // Sesuaikan posisi pop up di atas ikon
+            });
+
+            L.marker([-8.349507, 116.035753], {
+                icon: customIcon,
+                title: 'Gili Trawangan' // Atribut title untuk plugin
+            }).addTo(map).bindPopup('Gili Trawangan');
+
+            L.marker([-8.351532, 116.057369], {
+                icon: customIcon,
+                title: 'Gili Meno' // Atribut title untuk plugin
+            }).addTo(map).bindPopup('Gili Meno');
+
+            L.marker([-8.357138, 116.081732], {
+                icon: customIcon,
+                title: 'Gili Air' // Atribut title untuk plugin
+            }).addTo(map).bindPopup('Gili Air');
+
+
+            // L.marker([-8.349507, 116.035753]).addTo(map).bindPopup('Gili Trawangan');
+            // L.marker([-8.351532, 116.057369]).addTo(map).bindPopup('Gili Meno');
+            // L.marker([-8.357138, 116.081732]).addTo(map).bindPopup('Gili Air');
+
+
+            // PinSearch component
+            var searchBar = L.control.pinSearch({
+                position: 'topright',
+                placeholder: 'Search...',
+                buttonText: 'Search',
+                onSearch: function (query) {
+                    console.log('Search query:', query);
+                    // Handle the search query here
+                },
+                searchBarWidth: '200px',
+                searchBarHeight: '30px',
+                maxSearchResults: 3
+            }).addTo(map);
+
+
+            /*Plugin Geolocation */
+            var locateControl = L.control
+                .locate({
+                    position: "bottomright",
+                    drawCircle: true,
+                    follow: true,
+                    setView: true,
+                    keepCurrentZoomLevel: false,
+                    markerStyle: {
+                        weight: 1,
+                        opacity: 0.8,
+                        fillOpacity: 0.8,
+                    },
+                    circleStyle: {
+                        weight: 1,
+                        clickable: false,
+                    },
+                    icon: "fas fa-crosshairs",
+                    metric: true,
+                    strings: {
+                        title: "See Your Location",
+                        popup: "You're here. Accuracy {distance} {unit}",
+                        outsideMapBoundsMsg: "Not available",
+                    },
+                    locateOptions: {
+                        maxZoom: 16,
+                        watch: true,
+                        enableHighAccuracy: true,
+                        maximumAge: 10000,
+                        timeout: 10000,
+                    },
+                })
+                .addTo(map);
+
+            /*Plugin Mouse Position Coordinate */
+            L.control.mousePosition({ position: "bottomleft", separator: ",", prefix: "Point Coodinate: " }).addTo(map);
+
+            /* Scale Bar */
+            L.control.scale({
+                maxWidth: 150, position: 'bottomleft'
+            }).addTo(map);
+        </script>
+
+
+        <br>
+
+        <div id="maps">
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary-emphasis">Map</strong>
+                            <h3 class="mb-0">
+                                <i class="fa-solid fa-bed" style="margin-right: 10px;"></i> Stays
+                            </h3>
+                            <br>
+                            <!-- <div class="mb-1 text-body-secondary">New</div> -->
+                            <p class="card-text mb-auto">Find your comfortable place to stay with the most beautiful
+                                views you've ever seen. </p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="map_stay.html" class="btn btn-sm btn-outline-primary">Go to Map</a>
+                                </div>
+                                <small class="text-body-secondary">Leaflet Map</small>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" />
+                                <image href="assets/img/img11/thumbnailmap2.png" width="200" height="250"
+                                    preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success-emphasis">Map</strong>
+                            <h3 class="mb-0">
+                                <i class="fa-solid fa-utensils" style="margin-right: 10px;"></i> Food & Beverage
+                            </h3>
+                            <br>
+                            <!-- <div class="mb-1 text-body-secondary">Nov 11</div> -->
+                            <p class="mb-auto">Find place to eat delicious food in Gili.</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="map_food.html" class="btn btn-sm btn-outline-primary">Go to Map</a>
+                                </div>
+                                <small class="text-body-secondary">Leaflet Map</small>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                                <title>Placeholder</title>
+                                <rect width="100%" height="100%" fill="#55595c" />
+                                <image href="assets/img/img11/thumbnailmap3.png" width="200" height="250"
+                                    preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <!-- <h1 class="pb-4 mb-4 fst-italic border-bottom">
+                    More
+                </h1> -->
+
+                <article class="blog-post" id="WAY">
+
+                    <h2 class="pb-4 mb-4 border-bottom">How to get to Gili Island?</h2>
+
+                    <dl>
+                        <dt>From Lombok Airport</dt>
+                        <dd>We recommend access from Lombok Airport for those of you who want to vacation in Lombok and
+                            also visit Gili Island. You can depart from Lombok Airport via the Bypass route then head
+                            to Mataram City and arrive in Senggigi then from Senggigi you will head to Bangsal Harbor or
+                            Teluk
+                            Nare. At this port you will board a boat to cross to Gili Island in about 20 minutes. If
+                            you don't want the hassle, you can order a Lombok Tour Package which includes a tour to Gili
+                            Island at Lombok Local Area Travel.</dd>
+                        <div class="btn-group">
+                            <a href="https://www.booking.com/flights/destination/to-region/id/lombok.en.html?&label=lombok-w3gHRbsMYXuyzi5pDA5K9wS648254893849:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-308644943270:lp9121437:li:dec:dm&ws=&aid=2283172&gad_source=1&gclid=CjwKCAiAsIGrBhAAEiwAEzMlC9l-cOfeGZkWZz0p7q87VXwaPaWBO2jp5U41EDywVeJSjg47TlxVPRoCrgQQAvD_BwE"
+                                class="btn btn-sm btn-outline-primary">See flight ticket to Lombok</a>
+                        </div>
+                        <br>
+                        <br>
+                        <dt>From Bali Island</dt>
+                        <dd>When you have finished enjoying your holiday in Bali, you can occasionally try a tour to
+                            Gili Island departing from the island of Bali. You can go to Padang Bay Harbor then take
+                            a fast boat that goes to Gili at a cost of around 350,000/one way/person and the
+                            time taken by sea to arrive is around 2 hours.</dd>
+                        <br>
+                        <dt>From Lembar Harbor, Lombok</dt>
+                        <dd>For those of you backpackers who usually come from Lembar Harbor, you can take public
+                            transportation which routes from Lembar Harbor to Senggigi then from Senggigi you can take
+                            the Sutle Bus which goes to Bangsal Port or Teluk Nare and take a boat to Gili island.
+                        </dd>
+                    </dl>
+                    <br>
+                    <p>This is the route from Lombok International Airport to Bangsal Port. You can drag the marker to
+                        see route from another places.</p>
+
+                    <div class="container-2 mt-4">
+                        <div class="card">
+                            <!-- <div class="card-header">
+                                <h5>Jumlah Penduduk</h5>
+                            </div> -->
+                            <div class="card-body">
+                                <div id="map2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var map2 = L.map("map2").setView([-8.350060, 116.056335], 14);
+
+                        /*Plugin Mouse Position Coordinate */
+                        L.control.mousePosition({ position: "bottomright", separator: ",", prefix: "Point Coodinate: " }).addTo(map2);
+
+
+                        /* Image Watermark 2 */
+                        L.Control.Watermark = L.Control.extend({
+                            onAdd: function (map2) {
+                                var img = L.DomUtil.create('img');
+                                img.src = 'assets/img/logo/elm2.png';
+                                img.style.width = '50px';
+                                return img;
+                            }
+                        });
+                        L.control.watermark = function (opts) {
+                            return new L.Control.Watermark(opts);
+                        }
+
+                        L.control.watermark({ position: 'bottomright' }).addTo(map2);
+
+
+
+                        //  /* Tile Basemap */ (note: pilihan basemap diakses pada https://leaflet-extras.github.io/leaflet-providers/preview/)
+                        var basemap1 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="DIVSIG UGM" target="_blank">DIVSIG UGM</a>' //menambahkan nama//
+                        });
+
+                        var basemap2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z} / {y}/{x}', {
+                            attribution: 'Tiles & copy; Esri | <a href="Latihan WebGIS" target="_blank">DIVSIG UGM</a>'
+                        });
+
+                        var basemap3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{ x } ', {
+                            attribution: 'Tiles &copy; Esri | <a href="Lathan WebGIS" target="_blank">DIVSIG UGM</a>'
+
+                        });
+
+                        var basemap4 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+                            attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org / ">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+
+                        });
+
+                        var basemap5 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
+                            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                            ext: 'png'
+                        });
+
+                        var basemap6 = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain_background/{z}/{x}/{y}{r}.{ext}', {
+                            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                            ext: 'png'
+                        });
+
+                        var basemap7 = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                            subdomains: 'abcd',
+                        });
+
+                        basemap1.addTo(map2);
+
+                        /* Control Layer */
+                        var baseMaps = {
+                            "OpenStreetMap": basemap1,
+                            "Esri World Street": basemap2,
+                            "Esri Imagery": basemap3,
+                            "Stadia Dark Mode": basemap4,
+                            "Stadia Smooth": basemap5,
+                            "Stamen Terrain": basemap6,
+                            "CartoDB Voyager": basemap7
+                        };
+
+                        L.control.layers(baseMaps).setPosition('bottomright').addTo(map2);
+
+                        /* Memanggil File GeoJSON Point 01*/
+                        var wfsgeoserver1 = L.geoJson(null, {
+                            pointToLayer: function (feature, latlng) {
+                                return L.marker(latlng, {
+                                    icon: L.icon({
+
+                                    })
+                                });
+                            },
+
+                            onEachFeature: function (feature, layer) {
+                                /* Variabel content untuk memanggil atribut dari data file geojson */
+                                var content = "Desa : " + feature.properties.namobj + "<br>" +
+                                    "Kecamatan : " + feature.properties.wadmkc + "<br>" +
+                                    "Kabupaten : " + feature.properties.wadmkk;
+
+                                layer.on({
+                                    click: function (e) { //Fungsi ketika icon simbol di-klik
+                                        wfsgeoserver1.bindPopup(content);
+                                    },
+
+                                    // mouseover: function (e) {
+
+                                    //     wfsgeoserver1.bindTooltip(feature.properties.namobj);
+                                    // },
+
+                                    mouseout: function (e) {
+                                        wfsgeoserver1.closePopup();
+                                    }
+                                });
+                            }
+                        });
+
+                        $.getJSON("gili_geoserver.php", function (data) {
+                            wfsgeoserver1.addData(data);
+                            map.addLayer(wfsgeoserver1);
+                            map.fitBounds(wfsgeoserver1.getBounds());
+                        });
+
+                        /*Plugin Geolocation */
+                        var locateControl = L.control
+                            .locate({
+                                position: "bottomright",
+                                drawCircle: true,
+                                follow: true,
+                                setView: true,
+                                keepCurrentZoomLevel: false,
+                                markerStyle: {
+                                    weight: 1,
+                                    opacity: 0.8,
+                                    fillOpacity: 0.8,
+                                },
+                                circleStyle: {
+                                    weight: 1,
+                                    clickable: false,
+                                },
+                                icon: "fas fa-crosshairs",
+                                metric: true,
+                                strings: {
+                                    title: "See Your Location",
+                                    popup: "You're here. Accuracy {distance} {unit}",
+                                    outsideMapBoundsMsg: "Not available",
+                                },
+                                locateOptions: {
+                                    maxZoom: 16,
+                                    watch: true,
+                                    enableHighAccuracy: true,
+                                    maximumAge: 10000,
+                                    timeout: 10000,
+                                },
+                            })
+                            .addTo(map2);
+
+                        /*Plugin Routing */
+                        L.Routing.control({
+                            waypoints: [
+                                L.latLng(-8.394584, 116.099573),
+                                L.latLng(-8.7622955, 116.2732475)
+                            ],
+                            // routeWhileDragging: false,
+                            position: 'bottomleft'
+                        }).addTo(map2);
+
+
+
+                    </script>
+
+
+                    <br>
+                    <br>
+
+                    <h2 class="pb-4 mb-4 border-bottom" id="visit">Best Time To Visit Gili Islands</h2>
+                    <!-- <h3 class="display-5 link-body-emphasis mb-1">Best Time To Visit Gili Islands</h3> -->
+
+                    <div class="container mt-4">
+                        <div class="card">
+                            <!-- <div class="card-header">
+                                <h5>Jumlah Penduduk</h5>
+                            </div> -->
+                            <div class="card-body">
+                                <div id="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <p class="blog-post-meta">See the number of guests staying at star hotels in West Nusa Tenggara
+                        Province, 2022 </p>
+
+                    <div class="btn-group">
+                        <a href="https://ntb.bps.go.id/indicator/16/373/2/jumlah-tamu-menginap-hotel-bintang-menurut-kelas-di-provinsi-ntb.html"
+                            class="btn btn-sm btn-outline-primary">See
+                            more</a>
+                    </div>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.js"
+                        integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA=="
+                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                        crossorigin="anonymous"></script>
+
+                    <script>
+                        var options = {
+                            series: [{
+                                name: 'Number of Guests',
+                                data: [48.233, 40.893, 65.426, 27.498, 63.097, 68.205, 68.069, 69.868, 66.864, 69.642, 74.083, 92.175]
+                            }],
+                            chart: {
+                                type: 'bar',
+                                height: 350
+                            },
+                            plotOptions: {
+                                bar: {
+                                    horizontal: false,
+                                    columnWidth: '55%',
+                                    endingShape: 'rounded',
+                                    dataLabels: {
+                                        position: 'top',
+                                    },
+                                },
+                            },
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                show: true,
+                                width: 2,
+                                colors: ['transparent']
+                            },
+                            xaxis: {
+                                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                                title: {
+                                    text: 'Month in year'
+                                }
+                            },
+                            yaxis: {
+                                title: {
+                                    text: 'Number of people (in thousand)'
+                                }
+                            },
+                            fill: {
+                                opacity: 1
+                            },
+                            tooltip: {
+                                y: {
+                                    formatter: function (val) {
+                                        return val + " ribu jiwa"
+                                    }
+                                }
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                formatter: function (val) {
+                                    return val;
+                                },
+                                offsetY: -20,
+                                style: {
+                                    fontSize: '12px',
+                                    colors: ["#304758"]
+                                }
+                            },
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#chart"), options);
+                        chart.render();
+                    </script>
+
+
+
+
+                    <br>
+                    <br>
+
+
+
+                </article>
+
+
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">About Gili</h4>
+                        <p class="mb-0">The Gili Islands (Indonesian: Tiga Gili [Three Gilis], Kepulauan Gili [Gili
+                            Islands]) are an
+                            archipelago of three small islands or Gili island triplets — Gili Trawangan, Gili Meno
+                            and
+                            Gili Air — just
+                            off the northwest coast of Lombok, Indonesia. The local name of these three islands is
+                            Gili
+                            Indah which
+                            means "small beautiful islands".</p>
+                    </div>
+
+                    <div id="attraction">
+                        <h4>Things You Can Do in Gili!</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="https://www.viator.com/tours/Gili-Trawangan/Snorkeling-with-turtle-and-statue-in-Gilis/d50505-260991P1?m=28353&supag=118063152419&supsc=dsa-694098304204&supai=660597825093&supdv=c&supnt=g&suplp=1007738&supli=9126196&supti=dsa-694098304204&tsem=true&supci=dsa-694098304204&supap1=&supap2=&gad_source=1&gclid=Cj0KCQiA6vaqBhCbARIsACF9M6mCZZezBfd4ID-LoGua2aVLLczm_K0ffyFjktdQ98e2hcHGvq23DYkaAkRMEALw_wcB">
+                                    <img src="assets/img/attraction/turtledive.png" alt="" width="96" height="96">
+
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Snorkeling & Diving With Turtles</h6>
+                                        <small class="text-body-secondary">Click anywhere to see more info</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="https://en.tiket.com/to-do/snorkeling-trip-3gilis-with-glass-bottom-boat-by-anjani-tour">
+                                    <img src="assets/img/attraction/glassboat2.png" alt="" width="96" height="96">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Tour With Glass Bottom Boat</h6>
+                                        <small class="text-body-secondary">Click anywhere to see more info</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="https://lombok.tribunnews.com/2022/10/25/wisata-lombok-daftar-harga-moda-transportasi-di-gili-trawangan-sepeda-hingga-cidomo?page=all">
+                                    <img src="assets/img/attraction/cidomo.png" alt="" width="96" height="96">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Go Around The Island Using A Cidomo Or Bicycle</h6>
+                                        <small class="text-body-secondary">Click anywhere to see more info</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="https://www.traveloka.com/en-id/activities/indonesia/product/sunsetsunrise-horse-riding-1-hour-3296424719890">
+                                    <img src="assets/img/attraction/horseriding.png" alt="" width="96" height="96">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Horse Riding With Sunset Or Sunrise Views</h6>
+                                        <small class="text-body-secondary">Click anywhere to see more info</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+    </main>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16">
+            <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+        </symbol>
+    </svg>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use img src="assets/img/logo/LOGO_EDRA.png" />
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">edraelricadewi@mail.ugm.ac.id
+                    <br>
+                    D4 Geographic Information System
+                    <br>
+                    Vocational School
+                    <br>
+                    Gadjah Mada Univeristy
+                    <br>
+                    2023
+                </span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Edra13">
+                        <!-- <svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram" />
+                        </svg> -->
+                        <img src="assets/img/logo/elm2.png" alt="Description of your image" width="100" height="100">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+</body>
+
+</html>
